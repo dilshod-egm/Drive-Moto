@@ -1,0 +1,73 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+.bb {
+	border: 1px solid red;
+}
+
+.slider {
+	// .slider-naigation
+	&-navigation {
+		pointer-events: none;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		transform: translate(0px, -50%);
+		&__prev {
+			transform: rotate(-180deg);
+		}
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+	// .slider-arrow
+	&-arrow {
+		pointer-events: auto;
+		&::before {
+			color: $mainColor;
+			font-size: rem(29);
+		}
+
+		//.slider-arrow__white
+		&__white {
+			&::before {
+				color: #fff;
+			}
+		}
+	}
+}
+.card-no-cash {
+	.slide-products__icons {
+	}
+
+	.slide-products__image {
+		padding: 0 0 rem(11) 0;
+	}
+
+	.slide-products__title {
+	}
+
+	.slide-products__things {
+	}
+	.slide-products__link {
+	}
+}
+
+.slide-products__sale {
+	position: absolute;
+	top: rem(-1);
+	left: rem(-1);
+	background-color: $mainBlue;
+	color: #fff;
+	font-size: rem(12);
+	line-height: math.div(14, 12);
+	letter-spacing: 0.07em;
+	padding: rem(6) rem(16);
+}
